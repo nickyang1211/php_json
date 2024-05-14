@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ParseController;
+use App\Http\Controllers\CollectionController;
 use Psy\Command\ParseCommand;
 
 /*
@@ -24,3 +25,21 @@ Route::controller(ParseController::class)
     ->group(function () {
         Route::get('/parse', 'parse');
 });
+
+Route::controller(CollectionController::class)
+    ->prefix('collection')
+    ->group(function () {
+        Route::get('/filter', 'filter');
+        Route::get('/pluck', 'pluck');
+        Route::get('/contains', 'contains');
+        Route::get('/groupby', 'groupby');
+        Route::get('/sortby', 'sortby');
+        Route::get('/partition', 'partition');
+        Route::get('/reject', 'reject');
+        Route::get('/where', 'where');
+        Route::get('/wherein', 'wherein');
+        Route::get('/chunk', 'chunk');
+        Route::get('/count', 'count');
+        Route::get('/first', 'first');
+        Route::get('/firstwhere', 'firstwhere');
+    });
