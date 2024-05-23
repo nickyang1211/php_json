@@ -4,7 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ParseController;
 use App\Http\Controllers\CollectionController;
-use Psy\Command\ParseCommand;
+use App\Http\Helpers\HttpRequestHelper;
 
 /*
 |--------------------------------------------------------------------------
@@ -43,3 +43,18 @@ Route::controller(CollectionController::class)
         Route::get('/first', 'first');
         Route::get('/firstwhere', 'firstwhere');
     });
+
+Route::post('/call-url', function (Request $request) {  
+    $method = $request->input('method', 'GET');  
+    $url = $request->input('url');  
+    $options = $request->input('options', []);  
+    
+    // 调用 Helper 函数来发送请求  
+    $result = HttpRequestHelper::sendRequest($method, $url, $options);  
+    
+    if (isset($result['error'])) {  
+        return response()->json(['error' => $result['error']], 500);  
+    }  
+    
+    return response()->json($result, $result['statusCode']);  
+});
