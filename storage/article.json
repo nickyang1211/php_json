@@ -1,0 +1,43 @@
+[  
+  {  
+    "id": 1,  
+    "title": "我的第一篇博客文章",  
+    "author": "张三",  
+    "summary": "分享学习新技能的重要性。",  
+    "content": "在这篇文章中，我将分享我的一些想法和见解。我认为，学习新技能是不断进步的关键...",  
+    "tags": ["学习", "技能", "编程", "写作"],
+    "publishedDate": "2023-10-23",
+    "likeCount": 100000,
+    "commentCount": 80,
+    "image": "",
+    "POST_hint": "image",
+    "type": "一般文章"
+  },  
+  {  
+    "id": 2,  
+    "title": "如何有效管理时间",  
+    "author": "李四",  
+    "summary": "提供时间管理技巧和策略。",  
+    "content": "时间是我们最宝贵的资源之一。在本文中，我将分享一些实用的时间管理技巧...",  
+    "tags": ["时间管理", "效率", "生活技巧"],  
+    "publishedDate": "2023-10-25",  
+    "likeCount": 80,
+    "commentCount": 100,
+    "POST_hint": "video",
+    "type": "一般文章"
+  },  
+  {  
+    "id": 3,  
+    "title": "编程语言的未来趋势",  
+    "author": "王五",  
+    "summary": "探讨编程语言领域的最新发展和未来趋势。",  
+    "content": "随着技术的不断发展，编程语言也在不断演进。本文将探讨一些最新的编程语言...",  
+    "tags": ["编程语言", "未来趋势", "技术发展"],  
+    "publishedDate": "2023-10-27",  
+    "likeCount": 120,
+    "commentCount": 50,
+    "image": "",
+    "POST_hint": "video",
+    "type": "限制文章"
+  }
+]
