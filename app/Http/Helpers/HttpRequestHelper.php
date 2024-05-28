@@ -6,7 +6,7 @@ use GuzzleHttp\Client;
 
 class HttpRequestHelper  
 {  
-    public static function sendRequest($method, $url, $options = [])  
+    public static function sendRequest(string $method, string $url, array $options = []): array
     {  
         $client = new Client();  
 
