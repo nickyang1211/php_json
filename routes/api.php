@@ -4,7 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ParseController;
 use App\Http\Controllers\CollectionController;
-use Psy\Command\ParseCommand;
+use App\Http\Controllers\HelperController;
 
 /*
 |--------------------------------------------------------------------------
@@ -43,3 +43,8 @@ Route::controller(CollectionController::class)
         Route::get('/first', 'first');
         Route::get('/firstwhere', 'firstwhere');
     });
+    
+Route::controller(HelperController::class)
+    ->group(function () {
+        Route::post('/call-url', 'helper');
+});
