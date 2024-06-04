@@ -1,11 +1,20 @@
 <?php  
 
 namespace App\Http\Helpers;  
+use Exception;
 
 use GuzzleHttp\Client;  
 
-class HttpRequestHelper  
+class HttpRequestHelper
 {  
+
+    protected $client;
+
+    public function __construct()
+    {
+        $this->client = new Client();
+    }
+
     public static function sendRequest(string $method, string $url, array $options = []): array
     {  
         $client = new Client();  
@@ -17,7 +26,7 @@ class HttpRequestHelper
                 'statusCode' => $response->getStatusCode(),  
                 'body' => $response->getBody()->getContents(),  
             ];  
-        } catch (\Exception $e) {  
+        } catch (Exception $e) {  
             return [  
                 'error' => $e->getMessage(),  
             ];  
